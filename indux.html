@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas de Nayib</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #3c77bc; /* Fondo púrpura oscuro */
+            font-family: titulos2;
+            color: #5d6d7e; /* Texto en púrpura claro */
+            padding: 20px;
+        }
+
+        @font-face {
+            font-family: titulos1;
+            src: url(Tiny5-Regular.ttf);
+        }
+
+        @font-face {
+            font-family: titulos2;
+            src: url(Pixely.ttf);
+        }
+
+        /* Contenedor principal de las cartas */
+        .card-container {
+            display: grid;
+            grid-template-columns: 1fr; /* Una sola columna por defecto */
+            gap: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* En pantallas más grandes, muestra dos filas de tres cartas */
+        @media (min-width: 768px) {
+            .card-container {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1000px;
+            }
+        }
+
+        /* Estilos de la tarjeta */
+        .card {
+            background-color: #85c1e9; /* Fondo púrpura oscuro */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: #6592c4; /* Texto púrpura claro */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        /* Efecto de elevación al pasar el cursor */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Estilo de la imagen pixel art */
+        .card img {
+            width: 100px;
+            height: 100px;
+            image-rendering: pixelated; /* Efecto pixelado */
+            border: 3px solid #3c77bc; /* Borde púrpura */
+            border-radius: 50%;
+            margin-bottom: 15px;
+            background-color: #ffefd4; /* Fondo lila claro */
+        }
+
+        /* Nombre del personaje */
+        .character-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #ce5454; /* Color púrpura pastel */
+            margin-bottom: 10px;
+            font-family: titulos1;
+            font-size: 30px;
+        }
+
+        /* Descripción y atributos */
+        .description {
+            font-size: 14px;
+            color: #ddffec; /* Púrpura suave */
+            margin-bottom: 15px;
+            text-align: justify;
+            text-align: center;
+        }
+
+        /* Barra de atributos */
+        .attribute {
+            margin: 5px 0;
+        }
+
+        .attribute-label {
+            font-size: 14px;
+            color: #ddffec; /* Texto claro */
+        }
+
+        .attribute-bar {
+            background-color: #5696ca; /* Fondo púrpura oscuro */
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .attribute-bar-1 {
+            background-color: #1b7519; /* Fondo púrpura oscuro */
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .attribute-fill {
+            height: 100%;
+            background-color: #ce5454; /* Púrpura pastel para el relleno */
+        }
+
+        /* Estilo especial para la última tarjeta */
+        .card-special {
+            background-color: #85c1e9; /* Fono más vibrante */
+            border: 3px solid #ffd700; /* Borde dorado */
+            color: #ffd700; /* Texto dorado */
+        }
+
+        .card-special .character-name {
+            color: #ffd700; /* Nombre en dorado */
+        }
+
+        .card-special .attribute-fill {
+            background-color: #FFD700; /* Relleno de atributo en dorado */
+        }
+
+        h1 {
+            background-color: red;
+            border-radius: 20px;
+            text-align: center;
+            padding: 20px;
+            width: 400px;
+            color: white;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="card-container">
+        <div class="card">
+            <img src="lolo.gif" alt="Personaje Pixel Art 1">
+            <div class="character-name">Maestro Pokemon</div>
+            <div class="description"> Se ha pasado los juegos de pokemon el mismo en su propia nintendo. De seguro se sabe la tabla periodica de los elementos de la saga también. 
+            Y vive con la pesada carga de tener que explicarme cosas de pokemon porque yo de eso no se Nada.</div>
+            <div class="attribute">
+                <div class="attribute-label">Paciencia</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Fanatismo</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Experiencia</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Repetimos las cartas para un total de seis, variando datos si es necesario -->
+        <div class="card">
+            <img src="arthurmorgan.gif" alt="Personaje Pixel Art 2">
+            <div class="character-name">Arthur Morgan</div>
+            <div class="description">No se compro el juego pero minimo lo consiguio prestado (jamas lo devolvio). Sabe que rdr2 es una obra maestra y supuestamente es un pro sin el dead eyes (nadie puede verificar esa afirmación). De lo que si estamos seguros es que su caballo está descansando en paz RIP Emily</div>
+            <div class="attribute">
+                <div class="attribute-label">Lloros</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 10%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Honor</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 98%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Delitos</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 85%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="sayayin.gif" alt="Personaje Pixel Art 3">
+            <div class="character-name">Guerrero Sayayin</div>
+            <div class="description">Vegeta fan forever al parecer. No hay mucho que decir más allá de que fue un poco sorprendente saber que preferias a Vegeta antes que Goku jajaja. Le falto la mirada orgullosa al personaje pero me gusto más así</div>
+            <div class="attribute">
+                <div class="attribute-label">Orgullo</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 30%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Sangre Sayayin</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Fidelidad al personaje</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <!-- Carta 4 -->
+            <!-- Contenido aquí -->
+            <img src="granjero.gif" alt="Personaje Pixel Art 3">
+            <div class="character-name">Granjero</div>
+            <div class="description">Tu versión camelladora hecha juego. Puede que tenga más años de experiencia que yo pero yo tengo fe fe de que con un poco de vicio algún día lo dejaré votado. De momento, mi granjero favorito :).</div>
+            <div class="attribute">
+                <div class="attribute-label">Veteranismo</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 80%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Vicio</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 60%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Vinos</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <!-- Carta 5 -->
+            <img src="valderrama.gif" alt="Personaje Pixel Art 3">
+            <div class="character-name">Valderrama</div>
+            <div class="description">No hace falta decir mucho. Nada más mencionar que mi favorito jeje. Apodo todo bobo, te queda perfecto, para mi estas bautizado con ese nombre por siempre.</div>
+            <div class="attribute">
+                <div class="attribute-label">Futbol</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 15%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Relevancia</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Parecido</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 75%;"></div>
+                </div>
+            </div><!-- Contenido aquí -->
+        </div>
+
+        <!-- Carta especial -->
+        <div class="card card-special">
+            <img src="enfermo.gif" alt="Personaje Pixel Art 6">
+            <div class="character-name">Enfermo</div>
+            <div class="description">PROHIBIDO ESTAR TROMPUDO AJAJAJAJA. Mi asmatico favorito, lo quiero...en cuarentena :D. Y conmigo tmb.</div>
+            <div class="attribute">
+                <div class="attribute-label">Nivel de amenaza</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 95%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Defensas</div>
+                <div class="attribute-bar">
+                    <div class="attribute-fill" style="width: 5%;"></div>
+                </div>
+            </div>
+            <div class="attribute">
+                <div class="attribute-label">Malestar</div>
+                <div class="attribute-bar-1">
+                    <div class="attribute-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
